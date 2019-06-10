@@ -1,19 +1,17 @@
 export function listHotels() {
-    return { type: 'FETCH_HOTELS'};
-  }
-export function filterHotels(data,fromDate,toDate){
-
-    
-    const filterdList = data.filter((items)=>{
-     const c = items.availability.map((dates)=>dates.from);
-    console.log(new Date(c).getTime)
-    return new Date(c).getTime<toDate;
-    })
-  
-  return { type: 'FILTERED_HOTELS',filterdList};
+  return { type: "FETCH_HOTELS" };
+}
+export function filterHotels() {
+  return { type: "FILTERED_HOTELS"};
 }
 
-export function sort(data,items){
+export function sort(data, items) {
+  return { type: "SORTED", data, items };
+}
 
-  return { type: 'SORTED',data,items};
+export function StartDateToStor(startDate) {
+  return { type: "START_DATE", startDate };
+}
+export function endDateToStor(endDate) {
+  return { type: "END_DATE", endDate };
 }

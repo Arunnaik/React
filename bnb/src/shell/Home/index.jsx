@@ -25,19 +25,20 @@ class Home extends Component {
   handleFromChange(date) {
     this.setState({
       startDate: new Date(date).getTime()
-    });
+    },()=> this.props.StartDateToStor(this.state.startDate));
   }
   handleToChange(date) {
+
+    
     this.setState(
       {
         toDate: new Date(date).getTime()
-      },
-      () => alert(new Date(this.state.toDate))
-    );
+      },()=> this.props.endDateToStor(this.state.startDate));
+    
   }
   filterDates = () => {
+    alert(this.state.toDate>this.state.startDate)
     this.props.filterHotels(
-      this.props.home.hotelList.hotels,
       this.state.startDate,
       this.state.toDate
     );
@@ -81,9 +82,17 @@ class Home extends Component {
             </div>
             <div className='cardContainer'>
            
-            {this.props.home &&
+            {this.props.home&&this.props.home.filterdList?this.props.home.filterdList.map(item=>{
+              return (
+                <div key={item.name} className="cards">
+                  <p>{item.name}</p>
+                  <p>{item.price}</p>
+                  <p>{item.city}</p>
+                </div>
+              );
+            }):this.props.home &&
               this.props.home.hotelList &&
-              this.props.home.hotelList.hotels.map(item => {
+              this.props.home.hotelList.hotels.length>0?this.props.home.hotelList.hotels.map(item => {
                 return (
                   <div key={item.name} className="cards">
                     <p>{item.name}</p>
@@ -91,7 +100,7 @@ class Home extends Component {
                     <p>{item.city}</p>
                   </div>
                 );
-              })}
+              }):<p>no data availble for these dates</p>}
                </div>
           </div>
         </div>
