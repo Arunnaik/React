@@ -37,7 +37,6 @@ class Home extends Component {
     
   }
   filterDates = () => {
-    alert(this.state.toDate>this.state.startDate)
     this.props.filterHotels(
       this.state.startDate,
       this.state.toDate
