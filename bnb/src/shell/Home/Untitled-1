@@ -1,0 +1,59 @@
+[  
+    {  
+        "name":"Media One Hotel",
+        "price":102.2,
+        "city":"dubai",
+        "availability":[  
+            {  
+                "from":30,
+                "to":40
+            },
+            {  
+                "from":60,
+                "to":80
+            },
+            {  
+                "from":100,
+                "to":120"
+            }
+        ]
+    },
+    {  
+        "name":"Rotana Hotel",
+        "price":80.6,
+        "city":"cairo",
+        "availability":[  
+            {  
+                "from":140,
+                "to":160
+            },
+            {  
+                "from":200
+                "to":220
+            },
+            {  
+                "from":240
+                "to":260
+            }
+        ]
+    },
+    {  
+        "name":"Le Meridien",
+        "price":89.6,
+        "city":"london",
+        "availability":[  
+            {  
+                "from":280,
+                "to":300
+            },
+            {  
+                "from":320,
+                "to":340
+            },
+            {  
+                "from":360,
+                "to":380
+            }
+        ]
+    },
+]
